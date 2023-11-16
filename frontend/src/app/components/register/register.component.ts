@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register/register.service';
 
 @Component({
   selector: 'app-register',
@@ -7,6 +8,11 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+
+  constructor(
+    private _registerService: RegisterService,
+  ) { }
+
   first_name!: FormControl;
   last_name!: FormControl;
   username!: FormControl;
@@ -20,6 +26,10 @@ export class RegisterComponent {
   })
 
   onSubmit() {
-    console.warn(this.registerForm.value);
+    this._registerService.register(this.registerForm.value).subscribe(
+      (response) => {
+       console.log(response);
+        
+      })
   }
 }

@@ -9,6 +9,10 @@ import { LoginService } from 'src/app/services/login/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  constructor(
+    private _loginService: LoginService,
+  ) { }
+  
   username!: FormControl;
   password!: FormControl;
 
@@ -16,10 +20,6 @@ export class LoginComponent {
     username: new FormControl(''),
     password: new FormControl('')
   })
-
-  constructor(
-    private _loginService: LoginService,
-  ) { }
 
   onSubmit() {
     this._loginService.authenticate(this.loginForm.value).subscribe(
