@@ -9,6 +9,9 @@ import { LoginService } from 'src/app/services/login/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  username!: FormControl;
+  password!: FormControl;
+
   loginForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl('')

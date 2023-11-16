@@ -7,7 +7,12 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  registerForm = new FormGroup({
+  first_name!: FormControl;
+  last_name!: FormControl;
+  username!: FormControl;
+  password!: FormControl;
+
+  registerForm: FormGroup = new FormGroup({
     first_name: new FormControl(''),
     last_name: new FormControl(''),
     username: new FormControl(''),
