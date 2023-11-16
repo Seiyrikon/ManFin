@@ -12,11 +12,11 @@ export class LoginComponent {
   constructor(
     private _loginService: LoginService,
   ) { }
-  
+
   username!: FormControl;
   password!: FormControl;
 
-  loginForm = new FormGroup({
+  loginForm: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl('')
   })
